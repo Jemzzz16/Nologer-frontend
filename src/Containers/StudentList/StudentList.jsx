@@ -1,24 +1,28 @@
-import React, { useState } from 'react'
-import Card from '../../Components/Card/Card';
+import React, { useState, useEffect } from 'react';
+
 import './StudentList.scss';
 
 const StudentList = () => {
-  const [ student, setStudent ] = useState('');
-  
-  const getStudentAPI = async () => {
+  const [ student, setStudent] = useState('')
+  const studentAPI = async () => {
     const response = await fetch('http://localhost:8080/students');
     const student = await response.json();
-    setStudent(student);
-  };
-
-  const getStudent = (student) => {
-    return <Card student={student} />
+    setStudent(student)
+    return console.log(student);
   }
+  useEffect(() => {
+    studentAPI('');
+  }, []);
+
+  // const getStudent = (student) => {
+  //   return student
+  // }
+
   return (
     <div>
-      {getStudentAPI}
       <section>
-        {getStudent}
+        {/* {getStudent} */}
+        
       </section>
     </div>
   )

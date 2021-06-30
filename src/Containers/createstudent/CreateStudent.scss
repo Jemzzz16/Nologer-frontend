@@ -1,0 +1,17 @@
+.studentform {
+  // border: solid 2px fuchsia;
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 50px;
+
+  .submitbutton {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 20px;
+    align-items: center;
+  }
+}
