@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import Studentdetails from '../Studentdetails/Studentdetails';
 import StudentList from '../StudentList/StudentList';
 import CreateStudent from '../createstudent/CreateStudent';
+import Home from '../Home/Home';
+import Courses from '../Courses/Courses';
 
 
 const Routes = () => {
@@ -12,11 +14,17 @@ const Routes = () => {
       <Route path='/Studentdetails'>
         <Studentdetails />
       </Route>
-      <Route path='/StudentList'>
+      <Route path='/studentlist'>
         <StudentList />
       </Route>
       <Route path='/createstudent'>
         <CreateStudent />
+      </Route>
+      <Route path='/courses'>
+        <Courses />
+      </Route>
+      <Route path='/'>
+        <Home />
       </Route>
     </Switch>
   );

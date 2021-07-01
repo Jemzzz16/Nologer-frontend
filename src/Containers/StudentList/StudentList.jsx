@@ -1,31 +1,38 @@
 import React, { useState, useEffect } from 'react';
+import StudentCard from "../../Components/StudentCard/StudentCard";
+import StudentDetails from "../../Containers/Studentdetails/Studentdetails";
+
 
 import './StudentList.scss';
 
 const StudentList = () => {
-  const [ student, setStudent] = useState('')
-  const studentAPI = async () => {
-    const response = await fetch('http://localhost:8080/students');
-    const student = await response.json();
-    setStudent(student)
-    return console.log(student);
-  }
+  const [studentList, setStudentList] = useState([]);
+
   useEffect(() => {
-    studentAPI('');
+    fetch("http://localhost:8080/students")
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        setStudentList(jsonResponse);
+      });
   }, []);
 
-  // const getStudent = (student) => {
-  //   return student
-  // }
-
+  const getStudent = (students) => {
+    return (
+        <StudentCard students={students} />
+    );
+  };
+  
   return (
-    <div>
-      <section>
-        {/* {getStudent} */}
-        
-      </section>
-    </div>
-  )
-}
+    <>
+      <div className='container'>
+        <h1> Students </h1>
+          {studentList.map(getStudent)}
+          <StudentDetails />
+          <button>View</button>
+          <button>Delete</button>
+      </div>
+    </>
+  );
+};
 
-export default StudentList
+export default StudentList;

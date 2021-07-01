@@ -33,7 +33,6 @@ const CreateStudent = () => {
   }
 
 
-
   return (
     <>
       <form onSubmit={handleSubmit} className='studentform'>
