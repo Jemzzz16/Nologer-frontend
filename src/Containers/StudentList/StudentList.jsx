@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import StudentCard from "../../Components/StudentCard/StudentCard";
-import StudentDetails from "../../Containers/Studentdetails/Studentdetails";
-
+import React, {useEffect, useState} from 'react'
+import StudentCard from '../../Components/StudentCard/StudentCard';
 
 import './StudentList.scss';
 
 const StudentList = () => {
-  const [studentList, setStudentList] = useState([]);
+  const [studentList, setStudentList] = useState([]); // we want ONE student, so this is "student" not "studentList"
+
+  // 2. How can we get the ID of this student from the URL? hint: useParams();
 
   useEffect(() => {
-    fetch("http://localhost:8080/students")
+    fetch("http://localhost:8080/students") // <-- if this stays in details, it needs ONE student, not ALL students
       .then((response) => response.json())
       .then((jsonResponse) => {
         setStudentList(jsonResponse);
@@ -26,8 +26,8 @@ const StudentList = () => {
     <>
       <div className='container'>
         <h1> Students </h1>
+          <button>Add new Student</button>
           {studentList.map(getStudent)}
-          <StudentDetails />
           <button>View</button>
           <button>Delete</button>
       </div>

@@ -13,8 +13,7 @@ const Navbar = () => {
         <img src={books} alt='#'></img>
         <ul>
           <li><Link to='/studentlist'>Student List</Link></li>
-          <li><Link to='/studentdetails'>Student Details</Link></li>
-          <li><Link to='/createstudent'>Create New Student</Link></li>
+          {/* <li><Link to='/createstudent'>Create New Student</Link></li> */}
           <li><Link to='/courses'>Course Lists</Link></li>
         </ul>
       </div>
