@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import StudentCard from '../../Components/StudentCard/StudentCard';
+import { Link } from "react-router-dom";
 
-import './StudentList.scss';
-
-const StudentList = () => {
-  const [studentList, setStudentList] = useState([]); // we want ONE student, so this is "student" not "studentList"
+const Students = () => {
+  const [student, setStudent] = useState([]); // we want ONE student, so this is "student" not "studentList"
 
   // 2. How can we get the ID of this student from the URL? hint: useParams();
 
@@ -12,27 +11,29 @@ const StudentList = () => {
     fetch("http://localhost:8080/students") // <-- if this stays in details, it needs ONE student, not ALL students
       .then((response) => response.json())
       .then((jsonResponse) => {
-        setStudentList(jsonResponse);
+        setStudent(jsonResponse);
       });
   }, []);
 
-  const getStudent = (students) => {
+  const getStudent = (student) => {
     return (
-        <StudentCard students={students} />
+        <StudentCard student={student} />
     );
   };
   
+  
+
+
   return (
     <>
       <div className='container'>
         <h1> Students </h1>
-          <button>Add new Student</button>
-          {studentList.map(getStudent)}
-          <button>View</button>
-          <button>Delete</button>
+          <button><Link to='/createstudent'>Add new Student</Link></button>
+          {student.map(getStudent)}
+          
       </div>
     </>
   );
 };
 
-export default StudentList;
+export default Students;

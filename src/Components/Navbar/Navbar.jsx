@@ -12,8 +12,8 @@ const Navbar = () => {
         <Link to='/'><h1>Nologer</h1></Link>
         <img src={books} alt='#'></img>
         <ul>
-          <li><Link to='/studentlist'>Student List</Link></li>
-          {/* <li><Link to='/createstudent'>Create New Student</Link></li> */}
+          <li><Link to='/students'>Student List</Link></li>
+          <li><Link to='/createstudent'>Create New Student</Link></li>
           <li><Link to='/courses'>Course Lists</Link></li>
         </ul>
       </div>

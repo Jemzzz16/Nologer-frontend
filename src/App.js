@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import React from "react";
 import Routes from '../src/Containers/Routes/Routes';
 import Navbar from '../src/Components/Navbar/Navbar';

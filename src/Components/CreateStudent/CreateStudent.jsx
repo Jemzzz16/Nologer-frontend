@@ -38,7 +38,7 @@ const CreateStudent = () => {
       <form onSubmit={handleSubmit} className='studentform'>
         <p>Create a new Student</p>
         <label>First Name:</label>
-        <input type="text" name="name" />
+        <input type="name" name="name" />
         <label>Last Name:</label>
         <input type="text" name="name" />
         <label>Age:</label>

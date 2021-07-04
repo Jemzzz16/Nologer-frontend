@@ -7,13 +7,25 @@ main {
 
 .card {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   border: solid 2px #dc9dfc;
   border-radius: 20px;
   height: 50px;
-  width: 400px;
+  width: 250px;
   background-color: #e8cbf7;
   font-size: 1.6rem;
   box-shadow: lightgray 2px 5px;
+}
+
+button {
+  margin: 10px ;
+  background-color: purple;
+  color: white;
+  border-radius: 10px;
+  border-color: rebeccapurple;
+}
+
+button a {
+  color: white;
 }
