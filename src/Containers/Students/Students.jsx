@@ -21,8 +21,6 @@ const Students = () => {
     );
   };
   
-  
-
 
   return (
     <>
